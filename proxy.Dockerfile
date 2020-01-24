@@ -3,7 +3,7 @@ FROM node:alpine
 WORKDIR '/app'
 
 COPY package.json . 
-RUN npm install
+RUN npm --proxy http://proxy_vip_swg.srp.gov:8080 install
 
 COPY . . 
 
