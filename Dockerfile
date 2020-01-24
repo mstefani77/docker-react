@@ -1,7 +1,7 @@
 FROM node:alpine as builder
 WORKDIR '/app'
 COPY package.json . 
-RUN npm --proxy http://proxy_vip_swg.srp.gov:8080 install
+RUN npm install
 COPY . . 
 RUN npm run build
 
